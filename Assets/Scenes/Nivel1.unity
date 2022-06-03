@@ -380,6 +380,8 @@ MonoBehaviour:
   mostrarVidas: {fileID: 373449367}
   mostrarGanaste: {fileID: 2000748292}
   mostrarPerdiste: {fileID: 897599754}
+  cartelGanaste: {fileID: 2000748290}
+  cartelPerdiste: {fileID: 897599752}
 --- !u!65 &290189161
 BoxCollider:
   m_ObjectHideFlags: 0

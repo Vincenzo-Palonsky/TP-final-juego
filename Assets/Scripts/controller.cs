@@ -13,11 +13,15 @@ public class controller : MonoBehaviour
     public Text mostrarVidas;
     public Text mostrarGanaste;
     public Text mostrarPerdiste;
+    public GameObject cartelGanaste;
+    public GameObject cartelPerdiste;
 
     void Start()
     {
         posInicial = transform.position;
         posInicialCam = camara.transform.position;
+        cartelGanaste.SetActive(false);
+        cartelPerdiste.SetActive(false);
     }
 
     void Update()
