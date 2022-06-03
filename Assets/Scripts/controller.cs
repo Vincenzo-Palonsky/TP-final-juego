@@ -14,7 +14,7 @@ public class controller : MonoBehaviour
 
     void Update()
     {
-        transform.position += new Vector3(0,0,0.5f);
+        transform.position += new Vector3(0,0,0.1f);
 
         if (Input.GetKeyDown(KeyCode.W) && transform.position.y!=1.5)
         {
@@ -37,9 +37,14 @@ public class controller : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter()
+    void OnCollisionEnter(Collision obs)
     {
+        if (obs.gameObject == obstaculo)
+        {
+            Destroy(obstaculo, 0);
+            Destroy(GetComponent<Rigidbody>());
+            transform.position = new Vector3(0,0,transform.position.z+2);
+        }
         vidas--;
     }
-
 }
