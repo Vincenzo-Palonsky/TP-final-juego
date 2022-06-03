@@ -11,6 +11,8 @@ public class controller : MonoBehaviour
     float velocidadMov = 0.1f;
     int vidas = 3;
     public Text mostrarVidas;
+    public Text mostrarGanaste;
+    public Text mostrarPerdiste;
 
     void Start()
     {
@@ -49,13 +51,11 @@ public class controller : MonoBehaviour
         camara.transform.position = new Vector3(camara.transform.position.x, camara.transform.position.y, camara.transform.position.z + 2);
 
         vidas--;
+        mostrarVidas.text = "Vidas restantes: " + vidas.ToString();
         if (vidas == 0)
         {
-            Debug.Log("perdiste");
             transform.position = posInicial;
             camara.transform.position = posInicialCam;
-            vidas--;
-            mostrarVidas.text = "Vidas restantes: " + vidas.ToString();
         }
     }
 }
