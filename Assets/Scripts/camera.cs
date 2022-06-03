@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class camera : MonoBehaviour
 {
+    float velocidadMov = 0.1f;
+
     void Start()
     {
         
@@ -11,6 +13,6 @@ public class camera : MonoBehaviour
 
     void Update()
     {
-        transform.position += new Vector3(0, 0, 0.1f);
+        transform.position += new Vector3(0, 0, velocidadMov * Time.time);
     }
 }
