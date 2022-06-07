@@ -9,12 +9,14 @@ public class controller : MonoBehaviour
     public GameObject camara;
     Vector3 posInicial, posInicialCam;
     float velocidadMov = 0.1f;
+    float aumentarVelocidad = 1;
     int vidas = 3;
     public Text mostrarVidas;
     public Text mostrarGanaste;
     public Text mostrarPerdiste;
     public GameObject cartelGanaste;
     public GameObject cartelPerdiste;
+    float tiempoMuerte = 0;
 
     void Start()
     {
@@ -26,24 +28,25 @@ public class controller : MonoBehaviour
 
     void Update()
     {
-        transform.position += new Vector3(0,0,velocidadMov*Time.time);
+        transform.position += new Vector3(0 , 0, velocidadMov*aumentarVelocidad);
+        aumentarVelocidad = aumentarVelocidad+0.2f;
 
-        if (Input.GetKeyDown(KeyCode.W) && transform.position.y!=1.5)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y!=1.5)
         {
             transform.position += new Vector3(0, 1.5f, 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.S) && transform.position.y != -1.5)
+        if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y != -1.5)
         {
             transform.position -= new Vector3(0, 1.5f, 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.A) && transform.position.x != -1.5)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x != -1.5)
         {
             transform.position -= new Vector3(1.5f, 0, 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.D) && transform.position.x != 1.5)
+        if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x != 1.5)
         {
             transform.position += new Vector3(1.5f, 0, 0);
         }
@@ -60,6 +63,8 @@ public class controller : MonoBehaviour
         {
             transform.position = posInicial;
             camara.transform.position = posInicialCam;
+            cartelPerdiste.SetActive(true);
+            tiempoMuerte = Time.time;
         }
     }
 }
