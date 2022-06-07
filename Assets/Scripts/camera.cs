@@ -17,5 +17,13 @@ public class camera : MonoBehaviour
     {
         transform.position += new Vector3(0, 0, velocidadMov*aumentarVelocidad);
         aumentarVelocidad = aumentarVelocidad + 0.05f;
+
+        if (Time.time>2)
+        {
+            if (transform.position.z < -15.7f)
+            {
+                aumentarVelocidad = 0.1f;
+            }
+        }
     }
 }
