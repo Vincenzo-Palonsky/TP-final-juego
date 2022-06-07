@@ -5,7 +5,7 @@ using UnityEngine;
 public class camera : MonoBehaviour
 {
     float velocidadMov = 0.1f;
-    float aumentarVelocidad = 1;
+    float aumentarVelocidad = 0.1f;
     public GameObject jugador;
 
     void Start()
@@ -16,6 +16,6 @@ public class camera : MonoBehaviour
     void Update()
     {
         transform.position += new Vector3(0, 0, velocidadMov*aumentarVelocidad);
-        aumentarVelocidad = aumentarVelocidad + 0.2f;
+        aumentarVelocidad = aumentarVelocidad + 0.05f;
     }
 }

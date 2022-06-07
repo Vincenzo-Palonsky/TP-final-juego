@@ -9,7 +9,6 @@ public class musica : MonoBehaviour
     AudioSource fuenteAudio;
     float tiempoInicio;
 
-    // Start is called before the first frame update
     void Start()
     {
         fuenteAudio = GetComponent<AudioSource>();
@@ -18,7 +17,6 @@ public class musica : MonoBehaviour
         tiempoInicio = Time.time;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Time.time > tiempoInicio+56.059f)
