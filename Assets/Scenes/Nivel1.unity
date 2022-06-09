@@ -194,7 +194,9 @@ GameObject:
   - component: {fileID: 290189162}
   - component: {fileID: 290189161}
   - component: {fileID: 290189160}
+  - component: {fileID: 290189166}
   - component: {fileID: 290189165}
+  - component: {fileID: 290189167}
   m_Layer: 0
   m_Name: jugador
   m_TagString: Untagged
@@ -216,12 +218,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaculo: {fileID: 4429268718052750864, guid: 9d60edf4e98d65544869656c973460df,
     type: 3}
-  camara: {fileID: 534669902}
   mostrarVidas: {fileID: 373449367}
   mostrarGanaste: {fileID: 2000748292}
   mostrarPerdiste: {fileID: 897599754}
   cartelGanaste: {fileID: 2000748290}
   cartelPerdiste: {fileID: 897599752}
+  cam: {fileID: 534669906}
 --- !u!65 &290189161
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -310,6 +312,116 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &290189166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290189159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 800adfa843964d54fa47367ba3c34417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  golpe: {fileID: 8300000, guid: 3b7d3ab373a9706429f568ec20cf424c, type: 3}
+  ganar: {fileID: 8300000, guid: 809fa5a1c6081c94c907d69ca15a87f5, type: 3}
+--- !u!82 &290189167
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290189159}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &373449365
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,6 +594,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03e4e915e8f068946ba2202fc1f81b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aumentarVelocidad: 0.1
+  tiempoMuerte: 0
   jugador: {fileID: 290189159}
 --- !u!1 &607402487
 GameObject:
@@ -614,8 +728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868f78568e6cf784e87c31ee3ff43b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicaFondoIntro: {fileID: 8300000, guid: 6bf9cd32549642249bbea7a4800faea7, type: 3}
-  musicaFondoLoop: {fileID: 8300000, guid: 874a55dc3e961d44b81b8276b496c3e1, type: 3}
+  musicaFondo: {fileID: 0}
 --- !u!82 &674547514
 AudioSource:
   m_ObjectHideFlags: 0
@@ -626,9 +739,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3b7d3ab373a9706429f568ec20cf424c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

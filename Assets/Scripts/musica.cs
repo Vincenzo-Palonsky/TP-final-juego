@@ -4,25 +4,13 @@ using UnityEngine;
 
 public class musica : MonoBehaviour
 {
-    public AudioClip musicaFondoIntro;
-    public AudioClip musicaFondoLoop;
+    public AudioClip musicaFondo;
     AudioSource fuenteAudio;
-    float tiempoInicio;
 
     void Start()
     {
         fuenteAudio = GetComponent<AudioSource>();
-        fuenteAudio.clip = musicaFondoIntro;
+        fuenteAudio.clip = musicaFondo;
         fuenteAudio.Play();
-        tiempoInicio = Time.time;
-    }
-
-    void Update()
-    {
-        if (Time.time > tiempoInicio+56.059f)
-        {
-            fuenteAudio.clip = musicaFondoLoop;
-            fuenteAudio.Play();
-        }
     }
 }
