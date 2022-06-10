@@ -2,19 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class efectosSonido : MonoBehaviour
+public class festejo : MonoBehaviour
 {
-    public AudioClip golpe;
+    public AudioClip aplausos;
     AudioSource fuenteAudio;
 
     void Start()
     {
         fuenteAudio = GetComponent<AudioSource>();
-    }
-
-    void OnCollisionEnter()
-    {
-        fuenteAudio.clip = golpe;
+        fuenteAudio.clip = aplausos;
         fuenteAudio.Play();
     }
 }

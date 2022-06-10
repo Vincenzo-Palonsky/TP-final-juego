@@ -194,9 +194,9 @@ GameObject:
   - component: {fileID: 290189162}
   - component: {fileID: 290189161}
   - component: {fileID: 290189160}
-  - component: {fileID: 290189166}
   - component: {fileID: 290189165}
   - component: {fileID: 290189167}
+  - component: {fileID: 290189166}
   m_Layer: 0
   m_Name: jugador
   m_TagString: Untagged
@@ -219,9 +219,7 @@ MonoBehaviour:
   obstaculo: {fileID: 4429268718052750864, guid: 9d60edf4e98d65544869656c973460df,
     type: 3}
   mostrarVidas: {fileID: 373449367}
-  mostrarGanaste: {fileID: 0}
   mostrarPerdiste: {fileID: 897599754}
-  cartelGanaste: {fileID: 0}
   cartelPerdiste: {fileID: 897599752}
   cam: {fileID: 534669906}
 --- !u!65 &290189161
@@ -325,7 +323,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   golpe: {fileID: 8300000, guid: 3b7d3ab373a9706429f568ec20cf424c, type: 3}
-  ganar: {fileID: 8300000, guid: 809fa5a1c6081c94c907d69ca15a87f5, type: 3}
 --- !u!82 &290189167
 AudioSource:
   m_ObjectHideFlags: 0
@@ -714,7 +711,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &674547513
 MonoBehaviour:
   m_ObjectHideFlags: 0
