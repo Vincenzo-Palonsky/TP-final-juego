@@ -10,9 +10,7 @@ public class controller : MonoBehaviour
     float aumentarVelocidad = 0.1f;
     int vidas = 3;
     public Text mostrarVidas;
-    public Text mostrarGanaste;
     public Text mostrarPerdiste;
-    public GameObject cartelGanaste;
     public GameObject cartelPerdiste;
     float tiempoMuerte;
     public camera cam;
@@ -21,7 +19,6 @@ public class controller : MonoBehaviour
     {
         posInicial = transform.position;
         posInicialCam = cam.transform.position;
-        cartelGanaste.SetActive(false);
         cartelPerdiste.SetActive(false);
     }
 
@@ -31,8 +28,6 @@ public class controller : MonoBehaviour
         {
             transform.position += new Vector3(0, 0, 0.1f*aumentarVelocidad);
             aumentarVelocidad = aumentarVelocidad + 0.05f;
-
-            cartelGanaste.SetActive(false);
             cartelPerdiste.SetActive(false);
 
             if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y != 1.5)
@@ -75,14 +70,9 @@ public class controller : MonoBehaviour
                 transform.position += new Vector3(1.5f, 0, 0);
             }
         }
-
-        if (transform.position.z > 294)
-        {
-            cartelGanaste.SetActive(true);
-        }
     }
 
-    void OnCollisionEnter()
+    void OnCollisionEnter(Collision final)
     {
         transform.position = new Vector3(0, 0, transform.position.z + 2);
         cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y, cam.transform.position.z + 2);
@@ -100,6 +90,11 @@ public class controller : MonoBehaviour
             cam.aumentarVelocidad = 0.1f;
             vidas = 3;
             mostrarVidas.text = "Vidas restantes: " + vidas.ToString();
+        }
+
+        if (final.gameObject.name == "meta")
+        {
+
         }
     }
 }
