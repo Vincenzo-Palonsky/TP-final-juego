@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class obstaculos : MonoBehaviour
 {
-    public GameObject obstaculo;
+    public GameObject obstaculo1;
+    public GameObject obstaculo2;
+    public GameObject obstaculo3;
     bool derecha = true;
     bool arriba = true;
     bool esquinaDer = true;
 
     void Start()
     {
-        for (int i = 0; i < 50; i += 7)
+        for (int i = 0; i < 80; i += 10)
         {
-            GameObject clon = Instantiate(obstaculo);
+            GameObject clon = Instantiate(obstaculo1);
             if (derecha)
             {
                 clon.transform.position = new Vector3(1.5f, 0, i);
@@ -26,9 +28,9 @@ public class obstaculos : MonoBehaviour
             }
         }
 
-        for (int i = 70; i < 120; i += 7)
+        for (int i = 100; i < 180; i += 10)
         {
-            GameObject clon = Instantiate(obstaculo);
+            GameObject clon = Instantiate(obstaculo1);
             if (arriba)
             {
                 clon.transform.position = new Vector3(0, 1.5f, i);
@@ -38,21 +40,6 @@ public class obstaculos : MonoBehaviour
             {
                 clon.transform.position = new Vector3(0, -1.5f, i);
                 arriba = true;
-            }
-        }
-
-        for (int i = 140; i < 170; i += 7)
-        {
-            GameObject clon = Instantiate(obstaculo);
-            if (esquinaDer)
-            {
-                clon.transform.position = new Vector3(1.5f, 1.5f, i);
-                esquinaDer = false;
-            }
-            else
-            {
-                clon.transform.position = new Vector3(-1.5f, -1.5f, i);
-                esquinaDer = true;
             }
         }
     }

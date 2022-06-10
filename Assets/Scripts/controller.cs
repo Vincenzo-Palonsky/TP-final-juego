@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class controller : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class controller : MonoBehaviour
     public Text mostrarPerdiste;
     public GameObject cartelPerdiste;
     float tiempoMuerte;
+    float tiempoChoque;
     public camera cam;
 
     void Start()
@@ -94,7 +96,7 @@ public class controller : MonoBehaviour
 
         if (final.gameObject.name == "meta")
         {
-
+            SceneManager.LoadScene("Ganar");
         }
     }
 }
