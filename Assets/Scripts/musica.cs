@@ -12,5 +12,6 @@ public class musica : MonoBehaviour
         fuenteAudio = GetComponent<AudioSource>();
         fuenteAudio.clip = musicaFondo;
         fuenteAudio.Play();
+        fuenteAudio.loop = true;
     }
 }
