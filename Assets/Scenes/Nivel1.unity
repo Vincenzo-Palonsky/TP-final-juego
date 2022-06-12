@@ -128,7 +128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &170076734
 Light:
   m_ObjectHideFlags: 0
@@ -1284,6 +1284,8 @@ MonoBehaviour:
     type: 3}
   obstaculo2: {fileID: 425065339054452488, guid: 913b50e398a06b34eb032aebe8fb1e67,
     type: 3}
+  tiempoCambiar1: 0
+  tiempoCambiar2: 0
 --- !u!4 &1638280271
 Transform:
   m_ObjectHideFlags: 0

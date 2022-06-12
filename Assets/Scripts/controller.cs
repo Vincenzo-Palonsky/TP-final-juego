@@ -28,7 +28,7 @@ public class controller : MonoBehaviour
     {
         if (Time.time > tiempoMuerte+3)
         {
-            transform.position += new Vector3(0, 0, 0.05f*aumentarVelocidad);
+            //transform.position += new Vector3(0, 0, 0.05f*aumentarVelocidad);
             aumentarVelocidad = aumentarVelocidad + 0.05f;
             cartelPerdiste.SetActive(false);
 
