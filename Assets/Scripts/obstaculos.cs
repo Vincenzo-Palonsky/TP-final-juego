@@ -18,8 +18,8 @@ public class obstaculos : MonoBehaviour
 
     void Start()
     {
-        tiempoCambiar1 = Random.Range(3, 5);
-        tiempoCambiar2 = Random.Range(3, 5);
+        tiempoCambiar1 = Random.Range(2, 4);
+        tiempoCambiar2 = Random.Range(4, 6);
 
         for (int i = 0; i < 80; i += 10)
         {
@@ -89,41 +89,66 @@ public class obstaculos : MonoBehaviour
         }
     }
 
-    float tiempo = 0;
+    int tiempo1 = 0;
+    int tiempo2 = 0;
     void Update()
     {
-        tiempo = Mathf.FloorToInt(Time.time);
-        Debug.Log(tiempo);
-        if (tiempo % 4 == 0)
+        if (Mathf.FloorToInt(Time.time) > tiempo1 + tiempoCambiar1)
         {
             if (obstaculos3[0].transform.position.x == negativo)
             {
                 obstaculos3[0].transform.position = new Vector3(positivo, 0, 185);
                 obstaculos3[2].transform.position = new Vector3(positivo, 0, 215);
-                tiempo = -1;
             }
 
             else
             {
                 obstaculos3[0].transform.position = new Vector3(negativo, 0, 185);
                 obstaculos3[2].transform.position = new Vector3(negativo, 0, 215);
-                tiempo = -1;
             }
+
+            if (obstaculos4[1].transform.position.y == negativo)
+            {
+                obstaculos4[1].transform.position = new Vector3(0, positivo, 260);
+                obstaculos4[3].transform.position = new Vector3(0, positivo, 290);
+            }
+
+            else
+            {
+                obstaculos4[1].transform.position = new Vector3(0, negativo, 260);
+                obstaculos4[3].transform.position = new Vector3(0, negativo, 290);
+            }
+
+            tiempo1 += tiempoCambiar1;
         }
 
-        //if (Mathf.FloorToInt(Time.time) % tiempoCambiar2 == 0)
-        //{
-        //    if (obstaculos3[1].transform.position.x == negativo)
-        //    {
-        //        obstaculos3[1].transform.position = new Vector3(positivo, 0, obstaculos3[0].transform.position.z);
-        //        obstaculos3[3].transform.position = new Vector3(positivo, 0, obstaculos3[2].transform.position.z);
-        //    }
+        if (Mathf.FloorToInt(Time.time) > tiempo2 + tiempoCambiar2)
+        {
+            if (obstaculos3[1].transform.position.x == negativo)
+            {
+                obstaculos3[1].transform.position = new Vector3(positivo, 0, 200);
+                obstaculos3[3].transform.position = new Vector3(positivo, 0, 230);
+            }
 
-        //    else
-        //    {
-        //        obstaculos3[1].transform.position = new Vector3(negativo, 0, obstaculos3[0].transform.position.z);
-        //        obstaculos3[3].transform.position = new Vector3(negativo, 0, obstaculos3[2].transform.position.z);
-        //    }
-        //}
+            else
+            {
+                obstaculos3[1].transform.position = new Vector3(negativo, 0, 200);
+                obstaculos3[3].transform.position = new Vector3(negativo, 0, 230);
+            }
+
+            if (obstaculos4[0].transform.position.y == negativo)
+            {
+                obstaculos4[0].transform.position = new Vector3(0, positivo, 245);
+                obstaculos4[2].transform.position = new Vector3(0, positivo, 275);
+            }
+
+            else
+            {
+                obstaculos4[0].transform.position = new Vector3(0, negativo, 245);
+                obstaculos4[2].transform.position = new Vector3(0, negativo, 275);
+            }
+
+            tiempo2 += tiempoCambiar2;
+        }
     }
 }
