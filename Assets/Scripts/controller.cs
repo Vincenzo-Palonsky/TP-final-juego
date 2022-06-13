@@ -28,7 +28,7 @@ public class controller : MonoBehaviour
     {
         if (Time.time > tiempoMuerte+3)
         {
-            //transform.position += new Vector3(0, 0, 0.05f*aumentarVelocidad);
+            transform.position += new Vector3(0, 0, 0.01f*aumentarVelocidad);
             aumentarVelocidad = aumentarVelocidad + 0.05f;
             cartelPerdiste.SetActive(false);
 
@@ -76,8 +76,8 @@ public class controller : MonoBehaviour
 
     void OnCollisionEnter(Collision final)
     {
-        transform.position = new Vector3(0, 0, transform.position.z + 2);
-        cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y, cam.transform.position.z + 2);
+        transform.position = new Vector3(0, 0, transform.position.z+1);
+        cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y, cam.transform.position.z+1);
 
         vidas--;
         mostrarVidas.text = "Vidas restantes: " + vidas.ToString();
