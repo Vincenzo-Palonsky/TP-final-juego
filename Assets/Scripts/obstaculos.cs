@@ -18,8 +18,8 @@ public class obstaculos : MonoBehaviour
 
     void Start()
     {
-        tiempoCambiar1 = Random.Range(1, 3);
-        tiempoCambiar2 = Random.Range(1, 3);
+        tiempoCambiar1 = Random.Range(3, 6);
+        tiempoCambiar2 = Random.Range(3, 6);
 
         for (int i = 0; i < 80; i += 10)
         {
