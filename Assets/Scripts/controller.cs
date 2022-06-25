@@ -6,12 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class controller : MonoBehaviour
 {
-    public GameObject obstaculo;
     Vector3 posInicial, posInicialCam;
     float aumentarVelocidad = 0.1f;
     int vidas = 3;
     public Text mostrarVidas;
-    public Text mostrarPerdiste;
     public GameObject cartelPerdiste;
     float tiempoMuerte;
     float tiempoChoque;
@@ -76,8 +74,8 @@ public class controller : MonoBehaviour
 
     void OnCollisionEnter(Collision final)
     {
-        transform.position = new Vector3(0, 0, transform.position.z+1);
-        cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y, cam.transform.position.z+1);
+        transform.position = new Vector3(0, 0, transform.position.z+3);
+        cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y, cam.transform.position.z+3);
 
         vidas--;
         mostrarVidas.text = "Vidas restantes: " + vidas.ToString();
