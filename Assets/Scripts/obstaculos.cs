@@ -10,8 +10,8 @@ public class obstaculos : MonoBehaviour
     bool arriba = true;
     GameObject[] obstaculos3 = new GameObject[4];
     GameObject[] obstaculos4 = new GameObject[4];
-    public int tiempoCambiar1;
-    public int tiempoCambiar2;
+    int tiempoCambiar1;
+    int tiempoCambiar2;
     int j;
     float positivo = 1.5f;
     float negativo = -1.5f;
