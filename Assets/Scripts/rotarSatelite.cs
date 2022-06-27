@@ -6,6 +6,6 @@ public class rotarSatelite : MonoBehaviour
 {
     void Update()
     {
-        transform.eulerAngles += new Vector3(0, 1, 0);
+        transform.localEulerAngles += new Vector3(0, 1, 0);
     }
 }
